@@ -1,0 +1,33 @@
+import java.io.*;
+public class LaunchFR  {
+    public static void main(String[] args)throws Exception {
+        File dir = new File("PW");
+        dir.mkdir();
+
+        File f1 = new File(dir,"pw.txt");
+        try{
+            f1.createNewFile();
+        }
+        catch (IOException e){
+            System.out.println("Could not create file");
+        }
+        FileWriter fw = new FileWriter(f1);
+        fw.write("Hello,How are you?");
+        fw.close();
+
+        FileReader fd = new FileReader(f1);
+        //System.out.println((char)fd.read());
+
+       /* int i = fd.read();
+        while(i!=-1){
+            System.out.print(i + "----> ");
+            System.out.println((char)i);
+            i = fd.read();
+        }*/
+        char [] ch = new char[(int)f1.length()];
+        fd.read(ch);
+       for(char data : ch){
+           System.out.print(data);
+       }
+    }
+}
