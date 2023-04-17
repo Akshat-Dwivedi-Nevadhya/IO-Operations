@@ -1,0 +1,26 @@
+import java.io.*;
+public class LaunchBW {
+    public static void main(String[] args)throws Exception {
+        File dir = new File("PW");
+        dir.mkdir();
+
+        File f1 = new File(dir, "pw.txt");
+        f1.createNewFile();
+
+        FileWriter fw = new FileWriter(f1, true);
+        /*BufferedWriter bw = new BufferedWriter(fw);
+        bw.write("Java");
+        bw.newLine();
+        bw.write(65);
+        bw.newLine();
+        bw.write(new char[]{'j', 'a', 'v','a'});
+        bw.close();*/
+
+        PrintWriter pw = new PrintWriter(fw);
+        pw.println(12);
+        pw.println("Akshat");
+        pw.println(1.23);
+        pw.close();
+    }
+
+}
