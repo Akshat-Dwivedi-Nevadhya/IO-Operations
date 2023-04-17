@@ -1,0 +1,24 @@
+import java.io.*;
+public class LaunchFW {
+    public static void main(String[] args)throws Exception
+    {
+        File dir = new File("PW");
+        dir.mkdir();
+
+        File f1 = new File(dir,"pwjava.txt");
+        try{
+            f1.createNewFile();
+        }
+        catch(IOException e){
+            System.out.println("Could not create file");
+        }
+
+        FileWriter fw = new FileWriter(f1,true);
+        fw.write("\n");
+        fw.write("Hello,I am Akshat Dwivedi.How are you?");
+        char [] c = {'j','a','v','a'};
+        fw.write(c);
+        fw.close();
+
+    }
+}
